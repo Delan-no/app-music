@@ -1,0 +1,27 @@
+
+
+
+
+<div class="card" *ngIf="album" style="margin-top: 9rem;" [@fadeInAnimation]>
+
+    <img class="card-img-top" src="{{ album.url}}" alt="Group Music">
+
+    <div class="card-body">
+
+        <h5 class="card-title">{{album.title}}</h5>
+        <p class="card-text"> Name: {{album.name}}</p>
+        <button (click)="play(album)" class="btn btn-primary">Play ▶</button>
+        <button (click)="play(album)" class="btn btn-primary">Aléatoire</button>
+
+    </div>
+
+    <ul class="list-group" *ngIf="songs; else noSong">
+        <li class="list-group-item" *ngFor="let detailsList of songs"> {{ detailsList }}</li>
+    </ul>
+
+    <ng-template #noSong>
+        <ul>
+            <li class="list-group-item shadow-sm p-1 mb-3 bg-body-secondary rounded ">Pas de son pour cet album</li>
+        </ul>
+    </ng-template>
+</div>

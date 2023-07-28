@@ -1,0 +1,45 @@
+
+<app-search (searchAlbums)="search($event)"></app-search>
+    <div class="row content" *ngIf="albums" [@fadeInAnimation]>
+        <div class="col-sm-4 video">
+            <app-album-details [album]="selectedAlbum" (onPlay)="playParent($event)"> </app-album-details>
+        </div>
+        <div class="col-sm-8 music float-end">
+            <h1 class="text-center my-5 text-primary"> {{ titlePage}}</h1>
+            <!-- <a class="text-info">{{album.title}}</a> -->
+            <ng-container *ngIf="albums && albums.length; else notfound">
+                <div class="card" *ngFor="let album of albums ; let i = index">
+                    <div class="card-header text-bg-secondary"> {{ i + 1 }} {{ album.ref}}
+                        <span *ngIf="status === album.id" class="float-end loader"> </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><a routerLink="/album/{{album.id}}">{{ album.title }}</a></h5>
+                        <p class="card-text">{{ album.description }}</p>
+                        <p><a class="shadow p-2 mb-1 rounded btn btn-outline-primary  mx-1 py-1 " data-bs-theme="blue"
+                                *ngFor="let tag of album.tags"> {{ tag }} </a></p>
+                        <a class="btn btn-outline-primary py-1" href="#" role="button">fr</a>
+                        <a class="btn btn-outline-dark py-1" href="#" role="button">guitar</a>
+                        <ng-template [ngIf]="album.like">
+                            <img class="glyph-icon" src="./assets/svg/si-glyph-heart.svg" />
+                            <small>{{album.like}}</small>
+                        </ng-template>
+                        <ng-template [ngIf]="album.duration">
+                            <img class="glyph-icon" src="./assets/svg/si-glyph-timer.svg" />
+                            <small>{{ album.duration }} min</small>
+                        </ng-template>
+                        <button class="btn btn-dark fw-semibold px-4 py-2 mx-2" href="#" role="button"
+                            (click)="onSelect(album)">Details</button>
+                        <!-- <button (click)="onSelect" class="shadow p-1 btn bg-dark text-white" role="button"> {{ details }} </button> -->
+                    </div>
+                </div><!-- .card -->
+            </ng-container>
+            <ng-template #notfound>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text fs-4">Aucun album trouvé 😜! </p>
+                    </div>
+                </div>
+            </ng-template>
+        </div><!-- .music -->
+        </div>
+    <!-- </div> -->

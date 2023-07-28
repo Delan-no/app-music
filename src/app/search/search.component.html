@@ -1,0 +1,6 @@
+<form class="form-inline my-2 my-lg-0 d-flex" (ngSubmit)="onSubmit(formSearch)" #formSearch="ngForm">
+
+    <input class="form-control mr-sm-2  mt-3" type="search" placeholder="Search" aria-label="Search" name="word"  [(ngModel)]="word" (ngModelChange)="onChangeEmit($event)" required>
+
+    <button class="btn btn-outline-success mt-3" type="submit">Search</button>
+</form>

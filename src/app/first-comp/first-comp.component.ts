@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
+import { FormControl, NgForm } from "@angular/forms";
+import { TestService } from "test.service";
 
 @Component({
     selector: 'app-first-comp',
@@ -7,5 +9,17 @@ import { Component } from "@angular/core";
 })
 
 export class FirstCompComponent{
-    constructor() {}
+    constructor(
+        private testService: TestService
+    ) {}
+
+    texte = new FormControl('');
+
+    onButtonClick(form: NgForm) {
+        // Envoyez une notification aux abonnés
+        const inputText = form.value['texte']
+        this.testService.sendData(inputText);
+        // console.log(form.value['texte']);
+        
+    }
 }

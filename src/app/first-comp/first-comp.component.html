@@ -1,0 +1,8 @@
+
+<form (ngSubmit)=" onButtonClick(formLogin)" #formLogin="ngForm">
+    <div class="mb-3 mt-3">
+      <input name="texte" ngModel required type="texte" class="form-control" id="texte" placeholder="Entrer text">
+
+      <button [disabled]="formLogin.invalid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

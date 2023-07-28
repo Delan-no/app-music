@@ -12,6 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FirstCompComponent } from './first-comp/first-comp.component';
+import { SecondCompComponent } from './second-comp/second-comp.component';
+import { PaginateComponent } from './paginate/paginate.component';
 /**
  * L'ensemble des routes de notre application
  */
@@ -57,7 +60,10 @@ const albumsRoutes: Routes = [
     SearchComponent,
     AlbumDescriptionComponent,
     PageNotFoundComponent,
-    OpenCloseComponent
+    OpenCloseComponent,
+    FirstCompComponent,
+    SecondCompComponent,
+    PaginateComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-music';
+  receivedText: string | undefined;
+
+  parentReceive($event:string){
+    console.log('parent:' + $event);
+    
+  }
 }

@@ -6,11 +6,11 @@
                  <a class=" btn btn-outline-success mx-4" routerLink="" routerLinkActive="active">Home</a>
                  <a class=" btn btn-outline-success mx-4" routerLink="/login" routerLinkActive="active"> Se connecter </a>
                  <a class=" btn btn-outline-success mx-4" routerLink="/openclose" routerLinkActive="active"> Open-close </a>
-                </div>
-            </div>
-        </nav>  
-        
-        
+             </div>
+         </div>
+        <p *ngIf="count" style="color: azure;"> {{ count }}</p>
+     </nav>  
+                
 <div class="container-fuild principal">
     <!-- La partie où sera rendu tous les enfants de ce composant -->
         <router-outlet></router-outlet> 

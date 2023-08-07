@@ -18,8 +18,8 @@ export class AlbumService {
   constructor() { }
 
   getAlbums(): Album[] {
-    return this._albums
-    // return this._albums.sort((a:Album, b:Album) => b.duration - a.duration );
+    // return this._albums
+     return this._albums.sort((a:Album, b:Album) => b.duration - a.duration );
   }
 
   /**
@@ -66,6 +66,12 @@ export class AlbumService {
     return this // 
   }
 
+  
+  paginate(start: number, end: number): Album[]{
+    return this.getAlbums().slice(start, end)
+  }
+
+
   search(word: string): Album[] {
     return this._albums
       .filter(album => {
@@ -94,4 +100,6 @@ export class AlbumService {
   currentPage(numberPage: number) {
     return this.sendCurrentNumberPage.next(numberPage)
   }
+
+
 }

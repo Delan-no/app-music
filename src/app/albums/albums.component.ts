@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // importation de la définition de la classe et les albums
 import { Album } from "../album";
 import { AlbumService } from '../album.service';
@@ -28,14 +28,14 @@ export class AlbumsComponent {
   }
 
   ngOnInit(): void {
-    // this.albums = this.albumService.paginate(0, this.albumService.count());
+    this.albums = this.albumService.paginate(0, this.albumService.paginateNumberPage());
     /**
      * En relation avec les méthodes order(), limit()
      */
-    this.albums = this.albumService
-      .order((a: Album, b: Album) => a.duration - b.duration) // ordonne les albums
-      .limit(0, this.albumService.count()) // renvoie une sous-partie
-      .getAlbums() // recupère
+    // this.albums = this.albumService
+    //   .order((a: Album, b: Album) => a.duration - b.duration) // ordonne les albums
+    //   .limit(0, this.albumService.paginateNumberPage()) // renvoie une sous-partie
+    //   .getAlbums() // recupère
 
   }
 
@@ -53,6 +53,13 @@ export class AlbumsComponent {
     if ($event) {
       this.albums = $event;
     }
+
+  }
+
+
+  onSetPaginate($event: { start: number, end: number }) {
+    //Récupérer les albums compris entre [start et end]
+    this.albums = this.albumService.paginate($event.start, $event.end);
 
   }
 }

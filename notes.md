@@ -12,4 +12,12 @@ Un service est une classe qui regroupe les propriétés partagés.
 
 
 # Formulaires Angular
-Un formulaire avec Angular se gère suivant deux approches: les réactifs (en: reactive forms ) et les modèles (en: template-driven forms)
+Un formulaire avec Angular se gère suivant deux approches: les réactifs (en: reactive forms ) et les modèles (en: template-driven forms):
+
+## SGBD
+Un Système de Gestion de Base de Données est un ensemble de logiciels, et composants interconnectés qui permettent de stocker, d'organiser, de gérer et de manipuler des données de manière efficace et cohérente.
+
+* Les SGBD Relationnels et les BD NoSQL sont deux approches différentes pour la gestion et le stockage des données. Chacune de ces approches a ses propres avantages et inconvénients, et  elles sont utilisées en fonction des besoins spécifiques d'une application.
+
+
+RDBMS: Relational DataBase Management System(fr: Système de Gestion de Base de Données Relationnel [SGBDR])

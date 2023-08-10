@@ -3,7 +3,7 @@
     
     <div class="row content" *ngIf="albums" [@fadeInAnimation]>
         <div class="col-sm-4 video">
-            <app-album-details [album]="selectedAlbum" (onPlay)="playParent($event)"> </app-album-details>
+            <app-album-details [album] ="selectedAlbum" (onPlay)="playParent($event)"> </app-album-details>
         </div>
         <div class="col-sm-8 music float-end">
             <h1 class="text-center my-5 text-primary"> {{ titlePage}}</h1>

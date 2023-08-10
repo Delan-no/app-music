@@ -22,12 +22,9 @@ export class AlbumDescriptionComponent implements OnInit {
     //const id = this.route.snapshot.paramMap.get('id'); 
     const id = this.route.snapshot.params["albumId"]
     // TODO récupérez le détail d'un album;
-    this.album = this.aS.getAlbum(id);
-
-   
-    
-
-
+    this.aS.getAlbum(id)?.subscribe(album => {
+      this.album = album;
+    });
   }
 
 }

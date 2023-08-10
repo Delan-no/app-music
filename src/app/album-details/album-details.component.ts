@@ -29,12 +29,9 @@ export class AlbumDetailsComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.album) {
-      this.songs = this.albumService.getAlbumList(this.album.id)?.list;
-      // ALBUM_LISTS.forEach((element) => {
-      //   if (element.id === this.album.id) {
-      //     this.tabAlbum = element.list
-      //   }
-      // })
+      this.albumService.getAlbumList(this.album.id).subscribe(
+        (albumList) => {this.songs = albumList.list}
+      );
     }
 
     console.log("changement détecté sur le composant");
@@ -43,6 +40,7 @@ export class AlbumDetailsComponent implements OnInit, OnChanges {
 
   play(album: Album) {
     this.onPlay.emit(album);
+    this.albumService.swicthOn(album)
     //émettre un album vers le parent 
   }
 

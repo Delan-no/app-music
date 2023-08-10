@@ -32,6 +32,5 @@ export class AppComponent implements OnInit {
   }
   parentReceive($event: string) {
     console.log('parent:' + $event);
-
   }
 }

@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FirstCompComponent } from './first-comp/first-comp.component';
 import { SecondCompComponent } from './second-comp/second-comp.component';
 import { PaginateComponent } from './paginate/paginate.component';
+import { AudioPlayerComponent } from './audio-player/audio-player.component';
+import { HttpClientModule } from "@angular/common/http";
 /**
  * L'ensemble des routes de notre application
  */
@@ -64,6 +66,7 @@ const albumsRoutes: Routes = [
     FirstCompComponent,
     SecondCompComponent,
     PaginateComponent,
+    AudioPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ const albumsRoutes: Routes = [
     BrowserAnimationsModule,
 //forRoot: méthode utilisée pour définir les routes à utilisés dans le module de routage.
     RouterModule.forRoot(albumsRoutes), // chargement des routes dans l'application
+    HttpClientModule,
 
   ],
   providers: [],

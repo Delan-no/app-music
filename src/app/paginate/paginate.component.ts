@@ -31,7 +31,7 @@ export class PaginateComponent implements OnInit {
     this.albumService.count().subscribe(num => {
       this.total = num;
       this.numberPages = Math.ceil(this.total / this.perPage);
-  
+
       for (let i = 1; i <= this.numberPages; i++) {
         this.pages.push(i);
       }

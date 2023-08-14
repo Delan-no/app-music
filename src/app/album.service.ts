@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Album, List, SortAlbumCallback } from './album';
+import { Album, List} from './album';
+import * as _ from 'lodash';
 // import { ALBUMS, ALBUM_LISTS } from './mock-albumsss';
 // import * as _ from 'lodash';
 
@@ -10,9 +11,9 @@ import { Album, List, SortAlbumCallback } from './album';
   providedIn: 'root'
 })
 export class AlbumService {
-  shuffle(album: Album) {
-    throw new Error('Method not implemented.');
-  }
+  // shuffle(album: Album) {
+  //   throw new Error('Method not implemented.');
+  // }
   // shuffle(album: Album) {
   // }
   private _albumsUrl: string = environment.albumUrl; // _ convention private & protected
@@ -28,6 +29,8 @@ export class AlbumService {
     return this.http.get<Album[]>(this._albumsUrl).pipe(
       //ordonner les albums par ordre de durée décroissante
       map((albums: Album []) => {
+       
+        
         return albums.sort(
           (a: Album, b: Album ) => b.duration - a.duration)
       })
@@ -87,6 +90,12 @@ export class AlbumService {
 
   paginate(start: number, end: number): Observable<Album[]>{
     return this.http.get<Album[]>(this._albumsUrl).pipe(
+      map((albums:Album[]) => {
+        const res = _.values(albums)
+          console.log('sans lodash', albums);
+          console.log('avec lodash', res);    
+        return res;
+      }),
       map(
         (albums) => albums.sort(
           (a,b) => b.duration - a.duration

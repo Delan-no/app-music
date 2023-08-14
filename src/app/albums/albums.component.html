@@ -10,6 +10,7 @@
             <ng-container *ngIf="albums && albums.length; else notfound">
 
                 <app-paginate (setPaginate)="onSetPaginate($event)"></app-paginate>
+                
                 <div class="card" *ngFor="let album of albums ; let i = index">
                     <div class="card-header text-bg-secondary"> {{ i + 1 }} {{ album.ref}}
                         <span *ngIf="status === album.id" class="float-end loader"> </span>

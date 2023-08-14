@@ -30,6 +30,7 @@ export class AlbumsComponent {
    .paginate(0, this.albumService.paginateNumberPage())
    .subscribe({
     next: (alb: Album[]) =>{
+      console.log('get<Album[]>', alb );
       this.albums = alb
     }
    })

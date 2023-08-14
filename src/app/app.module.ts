@@ -19,6 +19,7 @@ import { AudioPlayerComponent } from './audio-player/audio-player.component';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
+import { ShareModule } from './share/share.module';
 /**
  * L'ensemble des routes de notre application
  */
@@ -36,16 +37,17 @@ import { AdminModule } from './admin/admin.module';
     OpenCloseComponent,
     FirstCompComponent,
     SecondCompComponent,
-    PaginateComponent,
+    // PaginateComponent,
     AudioPlayerComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-//forRoot: méthode utilisée pour définir les routes à utilisés dans le module de routage.
-    // chargement des routes dans l'application
-    HttpClientModule, AppRoutingModule,AdminModule
+    HttpClientModule, 
+    AdminModule,
+    AppRoutingModule,
+    ShareModule,
 
   ],
   providers: [],

@@ -16,7 +16,7 @@
                         <span *ngIf="status === album.id" class="float-end loader"> </span>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><a>{{ album.title }}</a></h5>
+                        <h5 class="card-title btn"> <a routerLink="/album/{{ album.id }}"> {{ album.title }} </a></h5>
                         <p class="card-text">{{ album.description }}</p>
                         <p><a class="shadow p-2 mb-1 rounded btn btn-outline-primary  mx-1 py-1 " data-bs-theme="blue"
                                 *ngFor="let tag of album.tags"> {{ tag }} </a></p>

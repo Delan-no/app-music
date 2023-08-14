@@ -5,7 +5,7 @@ import { ShareModule } from '../share/share.module';
 import { AddAlbumComponent } from './add-album/add-album.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [ { path: 'admin/add', component: AddAlbumComponent }, ] 
+const routes: Routes = [{ path: 'admin/add', component: AddAlbumComponent },]
 
 @NgModule({
   declarations: [AlbumComponent, AddAlbumComponent],

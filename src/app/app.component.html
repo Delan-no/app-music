@@ -1,14 +1,20 @@
 
-     <nav class="navbar bg-dark">
+     <nav class="navbar">
          <div>
              <div class="mx-2">
                  <a class=" btn btn-outline-success link-danger mx-4" routerLink="">app-music</a>
+                 
                  <a class=" btn btn-outline-success mx-4" routerLink="" routerLinkActive="active">Home</a>
+
                  <a class=" btn btn-outline-success mx-4" routerLink="/login" routerLinkActive="active"> Se connecter </a>
 
                  <a class=" btn btn-outline-success mx-4" routerLink="/admin" routerLinkActive="active"> Admin </a>
                  
                  <a class=" btn btn-outline-success mx-4" routerLink="/openclose" routerLinkActive="active"> Open-close </a>
+
+                 <a class=" btn btn-outline-success mx-4" routerLink="/form-template" routerLinkActive="active"> Template Form </a>
+
+                 <a class=" btn btn-outline-success mx-4" routerLink="/form-reactif" routerLinkActive="active"> Reactive Form </a>
              </div>
          </div>
         <p *ngIf="count" style="color: azure;"> {{ count }}</p>

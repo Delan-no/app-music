@@ -48,7 +48,7 @@ import { FormReactifComponent } from './form-reactif/form-reactif.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule, parce que le shareModule gère l'élement pour nous
     BrowserAnimationsModule,
     HttpClientModule, 
     AdminModule,
